@@ -5,14 +5,20 @@ package com.utku.taskexecutor.service.model;
  */
 public class TaskExecutionResult {
 
+    private final String id;
     private final String taskId;
     private final String result;
     private final long executionTime;
 
-    public TaskExecutionResult(String taskId, String result, long executionTime) {
+    public TaskExecutionResult(String id, String taskId, String result, long executionTime) {
+        this.id = id;
         this.taskId = taskId;
         this.result = result;
         this.executionTime = executionTime;
+    }
+
+    public String id() {
+        return id;
     }
 
     public String taskId() {

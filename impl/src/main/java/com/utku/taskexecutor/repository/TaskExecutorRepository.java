@@ -5,7 +5,7 @@ package com.utku.taskexecutor.repository;
  */
 public interface TaskExecutorRepository {
 
-    boolean insertTaskExecutionResult(String taskId, String result, Long executionTime);
+    String insertTaskExecutionResult(String taskId, String result, Long executionTime);
 
     long calculateAverageExecutionTimeFor(String taskId);
 

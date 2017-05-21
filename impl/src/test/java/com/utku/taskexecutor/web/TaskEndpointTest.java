@@ -30,7 +30,7 @@ public class TaskEndpointTest {
     @Test
     public void shouldExecuteShortNamedTask() {
 
-        TaskExecutionResult result = new TaskExecutionResult("short", "", 2L);
+        TaskExecutionResult result = new TaskExecutionResult("", "short", "", 2L);
         when(taskExecutorService.execute("short")).thenReturn(result);
 
         TaskResponse<TaskExecutionResult> shortTask = taskEndpoint.execute("short");

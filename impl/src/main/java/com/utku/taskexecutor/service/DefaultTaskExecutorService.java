@@ -33,11 +33,11 @@ public class DefaultTaskExecutorService implements TaskExecutorService {
         long stopTime = System.currentTimeMillis();
         long elapsedTime = stopTime - startTime;
 
-        insertExecutionTime(taskId, result, elapsedTime);
+        String id = insertExecutionTime(taskId, result, elapsedTime);
 
-        LOGGER.error("Preparing result of {} in {} ms", taskId, elapsedTime);
+        LOGGER.info("Preparing result of {} in {} ms", taskId, elapsedTime);
 
-        return new TaskExecutionResult(taskId, result, elapsedTime);
+        return new TaskExecutionResult(id, taskId, result, elapsedTime);
     }
 
     @Override
@@ -46,10 +46,10 @@ public class DefaultTaskExecutorService implements TaskExecutorService {
         return new TaskAverageExecutionTimeResult(taskId, averageTime);
     }
 
-    private void insertExecutionTime(String taskId, String result, Long elapsedTimeInMilliseconds){
-        LOGGER.error("Inserting result of {} in {} ms", taskId, elapsedTimeInMilliseconds);
+    private String insertExecutionTime(String taskId, String result, Long elapsedTimeInMilliseconds){
+        LOGGER.info("Inserting result of {} in {} ms", taskId, elapsedTimeInMilliseconds);
 
-        taskExecutorRepository.insertTaskExecutionResult(taskId, result, elapsedTimeInMilliseconds);
+        return taskExecutorRepository.insertTaskExecutionResult(taskId, result, elapsedTimeInMilliseconds);
     }
 
     private String executeAndHandleException(TaskFactory taskFactory, String taskId) {
