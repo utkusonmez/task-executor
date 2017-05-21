@@ -1,0 +1,4 @@
+${AnsiColor.BLUE} /\ /\/__   \/\ /\/\ /\
+${AnsiColor.BLUE}/ / \ \ / /\/ //_/ / \ \
+${AnsiColor.BLUE}\ \_/ // / / __ \\ \_/ /
+${AnsiColor.BLUE} \___/ \/  \/  \/ \___/ ${AnsiColor.GREEN}${info.app.name}#${info.app.version}
