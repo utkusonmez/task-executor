@@ -17,6 +17,7 @@ public class TaskResponse<T> implements Serializable {
     private final T data;
 
     public TaskResponse(String call, String code, String description, T data) {
+        this.call = call;
         this.code = code;
         this.description = description;
         this.data = data;

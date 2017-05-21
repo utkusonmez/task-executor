@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * TaskExecutorException
  */
-public class TaskExecutorException extends Exception {
+public class TaskExecutorException extends RuntimeException {
 
     private static final int SC_BAD_REQUEST = 400;
     private static final int SC_NOT_AUTHORIZED = 401;
@@ -42,9 +42,20 @@ public class TaskExecutorException extends Exception {
         return getMessage();
     }
 
+    public static TaskExecutorException CUSTOM(int status, String code, String message) {
+        return new TaskExecutorException(status, code, message);
+    }
+
     public static TaskExecutorException UNKNOWN_EXCEPTION(Throwable cause) {
         return new TaskExecutorException(SC_SERVER_FAILURE, "EX-TASK-001", "Unknown exception is occured.", cause);
     }
 
+    public static TaskExecutorException INVALID_TASK_EXECUTION_PARAMS = CUSTOM(SC_BAD_REQUEST, "EX-TASK-002", "Parameter are invalid for execution.");
+
+    public static TaskExecutorException INVALID_TASK_AVERAGE_PARAMS = CUSTOM(SC_BAD_REQUEST, "EX-TASK-003", "Parameter are invalid for average.");
+
+    public static TaskExecutorException ALWAYS_ERROR_FAILED_AGAIN = CUSTOM(SC_BAD_REQUEST, "EX-TASK-004", "always error failed again.");
+
+    public static TaskExecutorException TASK_NOT_FOUND = CUSTOM(SC_BAD_REQUEST, "EX-TASK-005", "Task matcher couldn't be found.");
 
 }
