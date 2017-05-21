@@ -1,0 +1,99 @@
+{
+	"variables": [],
+	"info": {
+		"name": "task-executor",
+		"_postman_id": "17fb9f55-49bb-01aa-6157-58bbd17803d6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "health",
+			"request": {
+				"url": "localhost:8080/health",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "short execute",
+			"request": {
+				"url": "localhost:8080/task/short/execute",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "short average",
+			"request": {
+				"url": "localhost:8080/task/short/calculateAverageExecutionTime",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "long execute",
+			"request": {
+				"url": "localhost:8080/task/long/execute",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "long average",
+			"request": {
+				"url": "localhost:8080/task/long/calculateAverageExecutionTime",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "always error execute",
+			"request": {
+				"url": "localhost:8080/task/always-error/execute",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "always error average ",
+			"request": {
+				"url": "localhost:8080/task/always-error/calculateAverageExecutionTime",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
