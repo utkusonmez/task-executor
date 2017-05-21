@@ -73,9 +73,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <excludeGroupIds>
-                        org.apache.tomcat.embed
-                    </excludeGroupIds>
                     <excludes>
                         <exclude>
                             <artifactId>jsr311-api</artifactId>
@@ -94,7 +91,6 @@
                         <dependency>
                             <artifactId>task-executor-impl</artifactId>
                             <groupId>com.utku</groupId>
-                            <version>${project.version}</version>
                         </dependency>
                     </requiresUnpack>
                 </configuration>

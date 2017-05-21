@@ -13,3 +13,5 @@ boot : how to start service with its components
 impl : implementation of service
 
 All requests are detailed in bin/task-executor.postman_collection.
+
+Also app needs Mongodb on default ports.
