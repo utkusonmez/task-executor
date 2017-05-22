@@ -89,7 +89,7 @@
                     </excludes>
                     <requiresUnpack>
                         <dependency>
-                            <artifactId>task-executor-impl</artifactId>
+                            <artifactId>task-executer-impl</artifactId>
                             <groupId>com.utku</groupId>
                         </dependency>
                     </requiresUnpack>
