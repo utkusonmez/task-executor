@@ -19,8 +19,10 @@ Also app needs Mongodb on default ports.
 
 (build)
 $ mvn clean install
+
 (build and fix jersey bug)
 $ mvn clean install spring-boot:repackage --file boot/
+
 (run)
 $ java -jar boot/target/task-executer-boot-0.0.1-SNAPSHOT.jar
 
